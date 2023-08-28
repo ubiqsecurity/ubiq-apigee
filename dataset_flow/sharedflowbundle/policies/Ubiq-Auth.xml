@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Script async="false" continueOnError="false" enabled="true" name="Ubiq-Auth">
+    <DisplayName>Ubiq Auth</DisplayName>
+    <Properties/>
+    <ResourceURL>py://Ubiq-Auth.py</ResourceURL>
+</Script>

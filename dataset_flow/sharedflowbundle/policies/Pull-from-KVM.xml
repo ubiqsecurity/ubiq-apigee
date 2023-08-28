@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Pull-from-KVM" mapIdentifier="Ubiq">
+    <DisplayName>Pull from KVM</DisplayName>
+    <Properties/>
+    <Get assignTo="private.ffs_definition">
+        <Key>
+            <Parameter ref="ffs_name"/>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

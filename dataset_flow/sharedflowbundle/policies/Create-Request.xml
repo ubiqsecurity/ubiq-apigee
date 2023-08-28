@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Create-Request">
+    <DisplayName>Create Request</DisplayName>
+    <AssignTo createNew="true" transport="http" type="request">requestFFSKey</AssignTo>
+    <Properties/>
+    <Add>
+        <Headers>
+        </Headers>
+        <QueryParams>
+            <QueryParam name="papi">{papi}</QueryParam>
+            <QueryParam name="ffs_name">{ffs_name}</QueryParam>
+        </QueryParams>
+        <FormParams/>
+    </Add>
+    <Set>
+        <Verb>GET</Verb>
+    </Set>
+</AssignMessage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-from-Response">
+    <DisplayName>Extract from Response</DisplayName>
+    <Source>responseFFSKey</Source>
+    <JSONPayload>
+        <Variable name="private.ffs_definition">
+            <JSONPath>$.{ffs_name}</JSONPath>
+        </Variable>
+        <Variable name="response_data">
+            <JSONPath>$</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

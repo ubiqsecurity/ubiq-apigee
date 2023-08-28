@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="Add-to-KVM" version="SHA-512:f1415466d4e95bad4bf5b84d1ee98044415538ffdc05c74f3c8e5625ddf5bbe0b1b497d7bded485bba8270426eabda9b0bb9cfbec12d0c778ef11f5d4a8e51d1"/>
+        <VersionInfo resourceName="Create-Request" version="SHA-512:1ed5740582a9714982aa502a99a6373992c218b848351496a6d43e753bcd07c55345290a61928654532905a35fbd914f62fdba87e3c91c5d9765dedfda94932e"/>
+        <VersionInfo resourceName="Extract-from-Response" version="SHA-512:f347a8afa43cb0adc0c978a79ea796be0f85d780f58c5d3f4a1a4a39aaae6f442af92abbabe0576377323f6dae981b098a0815fb449c193b5f69e65ff89ff93d"/>
+        <VersionInfo resourceName="Get-FFS-Keys-and-Def" version="SHA-512:c49126acf32d63535ada7fb4c57cdc08e85a76fc27e658a497d80b9485f3e8ea5f5bb577a8f375937c0a012485d4b56f817dcf6b8dc0d1c199872d63e88aee66"/>
+        <VersionInfo resourceName="Handle-Variables" version="SHA-512:7f2b6d8668c813c0db4a95816e5e4dee63a7ee15617af16167f1f1b79f970be0618cc3c58e4376875d5af5d1d331d3ae6964412d4b886a7a34ca952a9252b8cf"/>
+        <VersionInfo resourceName="Pull-from-KVM" version="SHA-512:e254b25079570553991c069ad05ed31e76edf05555280d83a997c179d75b33543d819a554f65065c6ed26180e0e62d628ead605f2fca106fef7b19cc87c2d4ad"/>
+        <VersionInfo resourceName="Ubiq-Auth" version="SHA-512:09e3e1a4b437cfb5b207b5993d48dae472683038681584190215d37b30e5b2aaeba4ade26eff2f0f78a520e27bf0f0a49302ee33ca80dec31244ef1241ad2830"/>
+    </Policies>
+    <ProxyEndpoints/>
+    <Resources>
+        <VersionInfo resourceName="jsc://Handle-Variables.js" version="SHA-512:00afe914371c799e61c06840fddb8c6232daccf6a3fa66b61d35c54a7675c69bd6c0c7bfd0aaa80a54026b4a0f90f4fa053df1e13748a4d2f84ca80d28f464d8"/>
+        <VersionInfo resourceName="py://Ubiq-Auth.py" version="SHA-512:b5807b66f3204ccaabade40a430cbaf7d128c013acc887d94409672159e81ba16e3ce439ee1ace96108378d65afd587b3b74f37db70e24cf55a703e27d83a56a"/>
+    </Resources>
+    <SharedFlows>
+        <VersionInfo resourceName="default" version="SHA-512:e78ee9e4cb82528e637d24f6cde88ffbbf7ae83d11e74aa7ea0e30e17ef5b49d976476af5ade8c311fa7bc351675f2f24886ea18dc815266c24032ffb75e157d"/>
+    </SharedFlows>
+    <TargetEndpoints/>
+</Manifest>
