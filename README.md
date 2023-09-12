@@ -11,5 +11,6 @@ For each Dataset you wish to use, you will need to add the Dataset Flow and conf
 
 ### Java Callout
 
+The <B>sample-app</B> directory contains a sample callout application written in Java using the Ubiq libraries along with the files necessary to use the dataflow above to setup the necessary data within Apigee. See [sample-app/README.md](sample-app/README.md) for more information.
 
-## Example
+

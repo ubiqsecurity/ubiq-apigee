@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JavaCallout name="ubiq-poc">
+    <ClassName>com.apigeesample.UbiqPoc</ClassName>
+     <Properties>
+         <Property name="DatasetsMappings">[
+   { "dataset" : "BIRTH_DATE", "json_path" : "$..birthDate"},
+   { "dataset" : "SSN", "json_path" : "$..ssn"}
+]</Property>
+     </Properties>
+    <ResourceURL>java://edge-custom-policy-ubiq-poc.jar</ResourceURL>
+    <DisplayName>Ubiq POC</DisplayName>
+</JavaCallout>
