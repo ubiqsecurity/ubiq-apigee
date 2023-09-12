@@ -2,9 +2,17 @@
 <KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Pull-from-KVM" mapIdentifier="Ubiq">
     <DisplayName>Pull from KVM</DisplayName>
     <Properties/>
-    <Get assignTo="private.ffs_definition">
+    <!-- private. is required for Encrypted KVM data -->
+    <Get assignTo="private.dataset_def">
         <Key>
-            <Parameter ref="ffs_name"/>
+            <!-- ex: BIRTH_DATE.definition -->
+            <Parameter ref="def_variable"/>
+        </Key>
+    </Get>
+    <Get assignTo="private.dataset_key">
+        <Key>
+            <!-- ex: BIRTH_DATE.key -->
+            <Parameter ref="key_variable"/>
         </Key>
     </Get>
     <Scope>environment</Scope>

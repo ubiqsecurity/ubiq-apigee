@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Add-Definition-to-KVM" mapIdentifier="Ubiq">
+    <DisplayName>Add Definition to KVM</DisplayName>
+    <Properties/>
+    <Put override="false">
+        <Key>
+            <Parameter ref="def_variable"/>
+        </Key>
+        <Value ref="private.dataset_def"/>
+    </Put>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

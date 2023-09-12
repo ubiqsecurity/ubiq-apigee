@@ -5,21 +5,25 @@
     <CreatedBy>support@ubiqsecurity.com</CreatedBy>
     <Description>Pulls definitions and keys for Datasets, for use with the Ubiq library. Caches data in the Apigee "Ubiq" KVM.</Description>
     <DisplayName>Ubiq Dataset Flow</DisplayName>
-    <LastModifiedAt>1693240075304</LastModifiedAt>
+    <LastModifiedAt>1694103584585</LastModifiedAt>
     <LastModifiedBy>ian.freshwater@ubiqsecurity.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:fd5be712f8516cdaa4c60932a4343ce6e110cab45d521638b29b5cd6cee49a10a0f4f00a9711582cb092b2e442e85c57918a78ab2c837b7a50a65b8e988341ee</ManifestVersion>
+    <ManifestVersion>SHA-512:e176a62fa355ce6277322fecc92d8a3163c5e3a6b139e12dc39eee5074b96260ea8baad18b60d5046d258d773fb4c3e23ad705ca6dab993566e1bd8ff5e98dfc:us-east-1</ManifestVersion>
     <Policies>
-        <Policy>Add-to-KVM</Policy>
+        <Policy>Add-Definition-to-KVM</Policy>
+        <Policy>Add-Key-to-KVM</Policy>
         <Policy>Create-Request</Policy>
-        <Policy>Extract-from-Response</Policy>
-        <Policy>Get-FFS-Keys-and-Def</Policy>
+        <Policy>Definition-Management</Policy>
+        <Policy>Get-Dataset-Keys-and-Def</Policy>
         <Policy>Handle-Variables</Policy>
+        <Policy>KVM-Keys</Policy>
         <Policy>Pull-from-KVM</Policy>
         <Policy>Ubiq-Auth</Policy>
     </Policies>
     <Resources>
         <Resource>py://Ubiq-Auth.py</Resource>
+        <Resource>jsc://Definition-Management.js</Resource>
         <Resource>jsc://Handle-Variables.js</Resource>
+        <Resource>jsc://KVM-Keys.js</Resource>
     </Resources>
     <Spec></Spec>
     <subType>SharedFlow</subType>

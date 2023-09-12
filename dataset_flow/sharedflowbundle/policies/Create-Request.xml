@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage async="false" continueOnError="false" enabled="true" name="Create-Request">
     <DisplayName>Create Request</DisplayName>
-    <AssignTo createNew="true" transport="http" type="request">requestFFSKey</AssignTo>
+    <AssignTo createNew="true" transport="http" type="request">requestDatasetKey</AssignTo>
     <Properties/>
     <Add>
-        <Headers>
-        </Headers>
+        <Headers/>
         <QueryParams>
-            <QueryParam name="papi">{papi}</QueryParam>
-            <QueryParam name="ffs_name">{ffs_name}</QueryParam>
+            <QueryParam name="papi">{ACCESS_KEY_ID}</QueryParam>
+            <QueryParam name="ffs_name">{dataset_name}</QueryParam>
         </QueryParams>
         <FormParams/>
     </Add>
