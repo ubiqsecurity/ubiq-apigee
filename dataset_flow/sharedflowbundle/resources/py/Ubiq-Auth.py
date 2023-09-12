@@ -64,10 +64,6 @@ class Http_Auth:
         # the Digest header is always included/overridden by
         # this code. it is a hash of the body of the http message
         # and is always present even if the body is empty
-
-        # hash_sha512 = cryptography.hazmat.primitives.hashes.Hash(
-        #     cryptography.hazmat.primitives.hashes.SHA512(),
-        #     backend=cryptography.hazmat.backends.default_backend())
         hash_sha512 = hashlib.sha512()
 
         if body:
@@ -81,13 +77,7 @@ class Http_Auth:
         # sign the message. the signature is an hmac of the
         # headers listed below
         #
-
-        # hmac_sha512 = cryptography.hazmat.primitives.hmac.HMAC(
-        #     self.access_key.encode('utf-8'),
-        #     cryptography.hazmat.primitives.hashes.SHA512(),
-        #     backend=cryptography.hazmat.backends.default_backend())
         hmac_sha512 = hmac.new(self.access_key, '', hashlib.sha512)
-        hmac_string = ""
 
         header_names = []
 
@@ -116,7 +106,6 @@ class Http_Auth:
                 hmac_sha512.update(
                     (name.lower() + ': ' + rheaders[name] + "\n").
                     encode('utf-8'))
-                hmac_string = hmac_string + (name.lower() + ': ' + rheaders[name] + "\\n").encode('utf-8')
 
         del rheaders['(created)']
         del rheaders['(request-target)']
@@ -131,25 +120,19 @@ class Http_Auth:
         rheaders['signature'] += base64.b64encode(
             hmac_sha512.digest()).decode('utf-8')
         rheaders['signature'] += '"'
-        flow.setVariable('hmac_string', hmac_string)
+
         return rheaders
 
 papi = flow.getVariable('ACCESS_KEY_ID')
-ffs_name = flow.getVariable('ffs_name')
-
-# to be pulled
 sapi = flow.getVariable('SECRET_SIGNING_KEY')
-encoded_papi = urllib.quote_plus(papi)
-# debug
-flow.setVariable('encoded_papi', encoded_papi)
-query = "papi="+encoded_papi+"&ffs_name="+ffs_name
-# debug
-flow.setVariable('query', query)
+dataset_name = flow.getVariable('dataset_name')
 
+# Apigee will encode the papi in request, so make sure signature uses encoded too.
+encoded_papi = urllib.quote_plus(papi)
+query = "papi="+encoded_papi+"&ffs_name="+dataset_name
 
 auth = Http_Auth(papi, sapi)
 headers = auth.headers('GET', query)
 
-# flow.setVariable('headers', headers)
 for key in headers:
-    flow.setVariable('requestFFSKey.header.'+key, headers[key])
+    flow.setVariable('requestDatasetKey.header.'+key, headers[key])

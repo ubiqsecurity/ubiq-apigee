@@ -15,8 +15,8 @@ Add a new Shared Flow policy. Select the flow you created in the previous step. 
     <Parameters>
         <Parameter name="ACCESS_KEY_ID">{private.ACCESS_KEY_ID}</Parameter>
         <Parameter name="SECRET_SIGNING_KEY">{private.SECRET_SIGNING_KEY}</Parameter>
-        <Parameter name="ffs_name">BIRTH_DATE</Parameter>
-        <Parameter name="output_name">private.BIRTH_DATE</Parameter>
+        <Parameter name="dataset_name">BIRTH_DATE</Parameter>
+        <Parameter name="dataset_ttl">30</Parameter>
     </Parameters>
     <SharedFlowBundle>Ubiq-Dataset-Flow</SharedFlowBundle>
 </FlowCallout>
@@ -24,9 +24,15 @@ Add a new Shared Flow policy. Select the flow you created in the previous step. 
 4 Key Parameters:
 - **ACCESS_KEY_ID** - Your public access key (see your Ubiq Credentials). 
 - **SECRET_SIGNING_KEY** - Your secret signing key, used to sign requests to the Ubiq API (see your Ubiq Credentials).
-- **ffs_name** - Name of the Dataset you are wanting to work with
-- **output_name** - Name of the variable to store the dataset definition in. You will need to pass this name to the Ubiq library as well, so it knows where to retrieve the data.
+- **dataset_name** - Name of the Dataset you are wanting to work with
+- **dataset_ttl** - Minutes to hold a dataset definition before pulling a fresh copy. Prevents stale definitions in case of rotation. Defaults to 30 minutes. 
 
 > Note: It is recommend to store your credentials in your encrypted "Ubiq" Apigee KVM rather than hardcoding it in your policies as plain text. If the KVM is encrypted, the variable will need to be prefixed with `private.`
 
+### Output 
+Output will be stored in two variables based on your dataset name: 
+- `private.{dataset_name}.key` 
+- `private.{dataset_name}.definition`. 
+
+(Example: `private.BIRTH_DATE.key`) These will be private to prevent them from being shown when the flow is viewed in Apigee's trace functionality. 
 

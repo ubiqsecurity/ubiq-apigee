@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SharedFlow name="default">
     <Step>
+        <Name>KVM-Keys</Name>
+    </Step>
+    <Step>
         <Name>Pull-from-KVM</Name>
     </Step>
     <Step>
-        <Condition>(private.ffs_definition is null)</Condition>
+        <Name>Definition-Management</Name>
+    </Step>
+    <Step>
+        <Condition>(private.dataset_def is null) or (private.dataset_key is null)</Condition>
         <Name>Create-Request</Name>
     </Step>
     <Step>
-        <Condition>(private.ffs_definition is null)</Condition>
+        <Condition>(private.dataset_def is null) or (private.dataset_key is null)</Condition>
         <Name>Ubiq-Auth</Name>
     </Step>
     <Step>
-        <Condition>(private.ffs_definition is null)</Condition>
-        <Name>Get-FFS-Keys-and-Def</Name>
-    </Step>
-    <Step>
-        <Condition>(private.ffs_definition is null)</Condition>
-        <Name>Extract-from-Response</Name>
-    </Step>
-    <Step>
-        <Condition>(response_data IsNot null)</Condition>
-        <Name>Add-to-KVM</Name>
+        <Condition>(private.dataset_def is null) or (private.dataset_key is null)</Condition>
+        <Name>Get-Dataset-Keys-and-Def</Name>
     </Step>
     <Step>
         <Name>Handle-Variables</Name>
+    </Step>
+    <Step>
+        <Condition>(private.dataset_def IsNot null) and (responseDatasetKey IsNot null)</Condition>
+        <Name>Add-Definition-to-KVM</Name>
+    </Step>
+    <Step>
+        <Condition>(private.dataset_key IsNot null) and (responseDatasetKey IsNot null)</Condition>
+        <Name>Add-Key-to-KVM</Name>
     </Step>
 </SharedFlow>
