@@ -17,6 +17,8 @@ Add a new Shared Flow policy. Select the flow you created in the previous step. 
         <Parameter name="SECRET_SIGNING_KEY">{private.SECRET_SIGNING_KEY}</Parameter>
         <Parameter name="dataset_name">BIRTH_DATE</Parameter>
         <Parameter name="dataset_ttl">30</Parameter>
+        <Parameter name="save_decrypted_data_key">false</Parameter>
+        <Parameter name="save_encrypted_data_key">false</Parameter>
     </Parameters>
     <SharedFlowBundle>Ubiq-Dataset-Flow</SharedFlowBundle>
 </FlowCallout>
@@ -28,6 +30,11 @@ Add a new Shared Flow policy. Select the flow you created in the previous step. 
 - **dataset_ttl** - Minutes to hold a dataset definition before pulling a fresh copy. Prevents stale definitions in case of rotation. Defaults to 30 minutes. 
 
 > Note: It is recommend to store your credentials in your encrypted "Ubiq" Apigee KVM rather than hardcoding it in your policies as plain text. If the KVM is encrypted, the variable will need to be prefixed with `private.`
+
+Optional Parameters:
+- **save_decrypted_data_key**: Retrieves data keys from the Ubiq platform but saves a cached copy of the decrypted data key in the KVM for fastest throughput.
+- **save_encrypted_data_keys**: Retrieves data keys from the Ubiq platform and stored a symmetrically encrypted version in the KVM.  This is significantly faster than storing an asymmetrically encrypted version of the data key in the KVM. This is only slightly slower than storing the decrypted version of the data key in the KVM.
+
 
 ### Output 
 Output will be stored in two variables based on your dataset name: 

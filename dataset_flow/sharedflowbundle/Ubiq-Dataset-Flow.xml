@@ -5,23 +5,32 @@
     <CreatedBy>support@ubiqsecurity.com</CreatedBy>
     <Description>Pulls definitions and keys for Datasets, for use with the Ubiq library. Caches data in the Apigee "Ubiq" KVM.</Description>
     <DisplayName>Ubiq Dataset Flow</DisplayName>
-    <LastModifiedAt>1694103584585</LastModifiedAt>
+    <LastModifiedAt>1695063536113</LastModifiedAt>
     <LastModifiedBy>ian.freshwater@ubiqsecurity.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:e176a62fa355ce6277322fecc92d8a3163c5e3a6b139e12dc39eee5074b96260ea8baad18b60d5046d258d773fb4c3e23ad705ca6dab993566e1bd8ff5e98dfc:us-east-1</ManifestVersion>
+    <ManifestVersion>SHA-512:532b7328995883728bd1ae2abfd3a17a1d9e7ec1931ab84f7ca5d962b4759afe9ad2cf455b5c4d2333b17ac0177b575a5f2b23da55a65c8c21ad310f8b612af5:us-east-1</ManifestVersion>
     <Policies>
         <Policy>Add-Definition-to-KVM</Policy>
         <Policy>Add-Key-to-KVM</Policy>
         <Policy>Create-Request</Policy>
         <Policy>Definition-Management</Policy>
         <Policy>Get-Dataset-Keys-and-Def</Policy>
+        <Policy>Handle-Response</Policy>
         <Policy>Handle-Variables</Policy>
         <Policy>KVM-Keys</Policy>
         <Policy>Pull-from-KVM</Policy>
         <Policy>Ubiq-Auth</Policy>
+        <Policy>Ubiq-Decrypt</Policy>
     </Policies>
     <Resources>
+        <Resource>java://accessors-smart-2.4.9.jar</Resource>
+        <Resource>java://edge-custom-policy-ubiq-poc.jar</Resource>
+        <Resource>java://json-path-2.8.0.jar</Resource>
+        <Resource>java://json-smart-2.4.10.jar</Resource>
+        <Resource>java://ubiqsecurity-2.1.0.jar</Resource>
+        <Resource>java://ubiqsecurity-fpe-2.1.0.jar</Resource>
         <Resource>py://Ubiq-Auth.py</Resource>
         <Resource>jsc://Definition-Management.js</Resource>
+        <Resource>jsc://Handle-Response.js</Resource>
         <Resource>jsc://Handle-Variables.js</Resource>
         <Resource>jsc://KVM-Keys.js</Resource>
     </Resources>

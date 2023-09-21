@@ -59,8 +59,6 @@ class Http_Auth:
             rheaders['date'] = email.utils.formatdate(
                 timeval=None, localtime=False, usegmt=True)
 
-        print(rheaders)
-
         # the Digest header is always included/overridden by
         # this code. it is a hash of the body of the http message
         # and is always present even if the body is empty

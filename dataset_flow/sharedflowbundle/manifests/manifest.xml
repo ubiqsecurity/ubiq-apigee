@@ -3,23 +3,32 @@
     <Policies>
         <VersionInfo resourceName="Add-Definition-to-KVM" version="SHA-512:5789325dde1e5faebe494c73fe3bfde86503fe19e34dea5675881eae90f1c4f3a3c92992f6446fc1c798d55c906aa0a2b2d45531892ee79bb2a65e93210d2a41"/>
         <VersionInfo resourceName="Add-Key-to-KVM" version="SHA-512:ec8ef2f273c04b6ee558c82f47fc16079e1c623c01334fdd80b3f2173141bca125ae6b3a32977bacbaf535f994d7bb6e6112ea19d51d995f965869a41a78e727"/>
-        <VersionInfo resourceName="Create-Request" version="SHA-512:8ad1f5419b9c59480f62378b88df1745abb73e225e67fd618e697a524f954f625dfa9ec00858846de796abed18f7f570280015f376a9a43040b28967597d327e"/>
+        <VersionInfo resourceName="Create-Request" version="SHA-512:996afd78482ac30d40927c8a2ba6bb49164515e11c446b1e44e0ed533741b83e20ad981c39a00d6a8ba20abd202275aa25ff038ddcd4fdd76acaac5053f88538"/>
         <VersionInfo resourceName="Definition-Management" version="SHA-512:04b8246df51ada8751c68d4cea27c85c704c7273344fec83193f4a5a25c1a6cc8a447d1b048b72373325734409890e46f9d4946652915c37eead4ada6bee3839"/>
-        <VersionInfo resourceName="Get-Dataset-Keys-and-Def" version="SHA-512:c49126acf32d63535ada7fb4c57cdc08e85a76fc27e658a497d80b9485f3e8ea5f5bb577a8f375937c0a012485d4b56f817dcf6b8dc0d1c199872d63e88aee66"/>
+        <VersionInfo resourceName="Get-Dataset-Keys-and-Def" version="SHA-512:7ed78007b6bba2635273d392f8216d43abc7c8b5f6006fcd1c299573ad2bd30a454ccf3fb1240706fa7d99518969f263950effae5a5b716dde513c52bed14cd6"/>
+        <VersionInfo resourceName="Handle-Response" version="SHA-512:fbfdb34392844b081e7c400cf200b14e9256c9c485b910b0461cfee48118ee5b45f0e7e7c03798a35d85d4fcd7895c91cf3f0c975278c42f21543ff0cefabc4b"/>
         <VersionInfo resourceName="Handle-Variables" version="SHA-512:7f2b6d8668c813c0db4a95816e5e4dee63a7ee15617af16167f1f1b79f970be0618cc3c58e4376875d5af5d1d331d3ae6964412d4b886a7a34ca952a9252b8cf"/>
         <VersionInfo resourceName="KVM-Keys" version="SHA-512:62c98a4d1e2468364eec934a1254ed0a56358bc9275bdb06951206dda48862e041c419b5ef4f8fd586cbe7745f304845cde524559ff484315a84636a3b19e334"/>
-        <VersionInfo resourceName="Pull-from-KVM" version="SHA-512:4ca9f5cceb37169e55ff855382f678a92b1abe124391232e88d494dda8d60899365792ad43cb92da9c749790c29038b8974f1edd90a49b7a2d05f448c44882ee"/>
+        <VersionInfo resourceName="Pull-from-KVM" version="SHA-512:bfffecdf7c344d27facf4f7f5b970df4d6f764ecb67e140fe09edc67a8e09237d2d5bb658bf64e5eadee5292103bf67f1a4bb0ebf797209311e44c1c6507742c"/>
         <VersionInfo resourceName="Ubiq-Auth" version="SHA-512:09e3e1a4b437cfb5b207b5993d48dae472683038681584190215d37b30e5b2aaeba4ade26eff2f0f78a520e27bf0f0a49302ee33ca80dec31244ef1241ad2830"/>
+        <VersionInfo resourceName="Ubiq-Decrypt" version="SHA-512:fe4004cf34667d2488c7bb9fcdb0deef91039aa00c9b7bf3d05f8f5cff1cebb3877379d0bd2932e0a5cb6eacc2c379af06934f0d5bf152d464b3c1cdc8746157"/>
     </Policies>
     <ProxyEndpoints/>
     <Resources>
-        <VersionInfo resourceName="jsc://Definition-Management.js" version="SHA-512:c3b059c638cba93ea0a78d05b8c21905a8dc6004f7337f28c6377894fc7840021fdc475181ad8ce450835e16589f7f64cf2bfe85e52c94e582f6c3b4f67fe801"/>
-        <VersionInfo resourceName="jsc://Handle-Variables.js" version="SHA-512:a5d5a9aaee5e9b21f8ac75702badc3492128ba3be2baea9fa75e6f6077c6152e148ea5e820f763801565608fd1c5845147fccba70d25f2eccfd4ef1444f087aa"/>
-        <VersionInfo resourceName="jsc://KVM-Keys.js" version="SHA-512:38f3e56bcf8f054081ccb7f39b55f3a58e24c22a6dcd3d6628dc9404933ecc44a8a861f79d3567794a931e83991c134cba649b3e154b57cdd780f9bd02bd7cc2"/>
-        <VersionInfo resourceName="py://Ubiq-Auth.py" version="SHA-512:4ad446794a4b19616c33c481caf07c9091b0cb94e4f84ccd3dc750e568245195704507c15d1a66369c85d88c22c97c362d903309dbc94ed76db1d2c985bb2234"/>
+        <VersionInfo resourceName="java://accessors-smart-2.4.9.jar" version="SHA-512:41e7910e89550f0118c1b7d3a2e9bd24cff299f3d935616f604d29fe74276b2315846380fae2e83bb5785263a860e6973052d8906cddf1c8d2bc9e30a95785bf"/>
+        <VersionInfo resourceName="java://edge-custom-policy-ubiq-poc.jar" version="SHA-512:0b82b31b4d5352c843bfaa03213d1f6a477893b05e452fcd6d489318cb6a6036d618dfdafaa7016d52cd115565fa4fb3e276b4dbf6c1405858a8eeca2a587fac"/>
+        <VersionInfo resourceName="java://json-path-2.8.0.jar" version="SHA-512:8d1521092a2acb13a2667774b8b81debc1f2a0e937007e27e5bd28bb222910774b64d6e269f33473f765c810c03a34e715d16065dc9a4be8d8d081436282ba7e"/>
+        <VersionInfo resourceName="java://json-smart-2.4.10.jar" version="SHA-512:de94fc5a379151bf659dfc93376c16b9c200870b7097f6eabcc8c40af41e47f30048b6c8e28f07ce073123841b979e050379e291e1af782377bf4d3d1fb73494"/>
+        <VersionInfo resourceName="java://ubiqsecurity-2.1.0.jar" version="SHA-512:bbccf7db6cee78812d81c3dfce153a7559827cfcb06014230c796877b198be8404849d74bc0e37963d62b13435033e076766fa0754d0d196f47bec9624734009"/>
+        <VersionInfo resourceName="java://ubiqsecurity-fpe-2.1.0.jar" version="SHA-512:bbc06a5f0a76837f101dccd16a10fed3db1100185d48a855c789e0e0609de617a33b12ebe1efe8c826e9869fd224b780f4401f971a46d746e0022a496882db6f"/>
+        <VersionInfo resourceName="jsc://Definition-Management.js" version="SHA-512:7fbf1073da9021a14db612074bd297423d62a04b786722c26bc5ff4d9d0246df3715b370da63b0830307db0ced37a40b0702effe1fa50663c117a539670ecc7c"/>
+        <VersionInfo resourceName="jsc://Handle-Response.js" version="SHA-512:2936d06bab7d3f95c3fccca7386fcec87276183c4274339b78bb98d00c1f9d8483b068a18cc1423eaa0fff93eb527af20570c59c535cb1a678569803a6da73b2"/>
+        <VersionInfo resourceName="jsc://Handle-Variables.js" version="SHA-512:34d1b532ba4a925669ddbebd17de4d32f77e37c6f7eee2d2bb6f1addc30cd7bb00df3e2db53c5ce6f6fe0d990f01543692bbfbfc14c87c4e4115784948aa2a6d"/>
+        <VersionInfo resourceName="jsc://KVM-Keys.js" version="SHA-512:0af452815bfaee28c068d2aceaa30986aa2731d3f0cfde29b10cd75aa0d1815ffccd73586437b3989072b7da369884fbf9f5a2c08b2bc38c294b766f3b3d9f17"/>
+        <VersionInfo resourceName="py://Ubiq-Auth.py" version="SHA-512:7431194f272bb0a2d66941d8463896865fb4929a9bf613aab1279d3d29cd1f4cbfa0f6c79f1e3bf65f1cf894060b9935957b71b6cb72a4b483daad1aeb622de3"/>
     </Resources>
     <SharedFlows>
-        <VersionInfo resourceName="default" version="SHA-512:f8aac3b8ecae78b4f0afdd929833183cc03e79fa99ee88789e126c6d35acebb405e2e09920f7ce4156a9973aa90ac3f769f4351b92942d1cb6b58461192bae41"/>
+        <VersionInfo resourceName="default" version="SHA-512:a3a1cdfad165efc8b523061954c516cde5eb11c17cce8b7e8f69bec957dfb387de1f0a26c7968b5bada336795aaf410ca2b079baec0b26e1bc5818953c2c62a5"/>
     </SharedFlows>
     <TargetEndpoints/>
 </Manifest>

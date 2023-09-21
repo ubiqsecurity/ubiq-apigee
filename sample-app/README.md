@@ -56,7 +56,7 @@ The resulting json is then formatted and returns in the MessageContext.
 
 The <B>credentials.xml</B> contains the setup of retrieving variables from the encrypted KVM.
 
-The <B>RetrieveBirthday.xml</B> is an example of the setup required by the shared flow in order to retrieve the BIRTH_DATE dataset from the Ubiq platform or read the values that are cached in the Apigee KVM.
+The <B>RetrieveBirthday.xml</B> is an example of the setup required by the shared flow in order to retrieve the BIRTH_DATE dataset from the Ubiq platform or read the values that are cached in the Apigee KVM.  See the description of the [Shared Flow](../dataset_flow/README.md#in-your-flow)
 
 The <B>RetrieveSSN.xml</B> is an example of the setup required by the shared flow in order to retrieve the BIRTH_DATE dataset from the Ubiq platform or read the values that are cached in the Apigee KVM.
 

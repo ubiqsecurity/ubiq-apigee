@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JavaCallout name="Ubiq-Decrypt">
+    <ClassName>com.apigeesample.UbiqDecrypt</ClassName>
+    <ResourceURL>java://edge-custom-policy-ubiq-poc.jar</ResourceURL>
+    <DisplayName>Decrypt Data Key</DisplayName>
+</JavaCallout>

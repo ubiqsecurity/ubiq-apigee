@@ -6,6 +6,7 @@
         <Parameter name="SECRET_SIGNING_KEY">{private.SECRET_SIGNING_KEY}</Parameter>
         <Parameter name="dataset_name">SSN</Parameter>
         <Parameter name="dataset_ttl">30</Parameter>
+        <Parameter name="save_encrypted_data_key">true</Parameter>
     </Parameters>
     <FaultRules/>
     <Properties/>
