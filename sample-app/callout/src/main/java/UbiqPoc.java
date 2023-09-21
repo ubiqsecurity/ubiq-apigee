@@ -36,9 +36,6 @@ import com.jayway.jsonpath.internal.JsonFormatter;
 
 import java.util.concurrent.*;
 
-import java.time.Duration;
-import java.time.Instant;
-
 public class UbiqPoc implements Execution {
 
   private Map <String,String> properties; // read-only
@@ -72,7 +69,6 @@ public class UbiqPoc implements Execution {
       }
 
 	public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
-		
   try {
 
     UbiqCredentials ubiqCredentials;
@@ -84,7 +80,8 @@ public class UbiqPoc implements Execution {
 
     ACCESS_KEY_ID = getVar(messageContext, "private.ACCESS_KEY_ID");
     SECRET_CRYPTO_ACCESS_KEY = getVar(messageContext, "private.SECRET_CRYPTO_ACCESS_KEY");
-    SECRET_SIGNING_KEY = getVar(messageContext, "private.SECRET_SIGNING_KEY");
+    // Keep null to prevent billing record calls at end
+    // SECRET_SIGNING_KEY = getVar(messageContext, "private.SECRET_SIGNING_KEY");
 
     String DatasetMappings = getProperty("DatasetsMappings");
 
@@ -128,6 +125,7 @@ public class UbiqPoc implements Execution {
         String dataset_def = getVar(messageContext, "private." + entry.getKey() + ".definition");
         String name = ubiqEncryptDecrypt.loadDataset(dataset_def);
         String key = getVar(messageContext,"private." + entry.getKey() + ".key");
+
         // This assumes the key is CURRENT_KEY
         ubiqEncryptDecrypt.loadKeyDef(name, key, true);
 

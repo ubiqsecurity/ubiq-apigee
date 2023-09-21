@@ -7,29 +7,45 @@
         <Name>Pull-from-KVM</Name>
     </Step>
     <Step>
+        <!-- Check if defs are older than accepted TTL -->
         <Name>Definition-Management</Name>
     </Step>
+    <!-- If we need to pull fresh/new dataset definitons, make a request to the Ubiq API -->
     <Step>
+        <!-- Create Request -->
         <Condition>(private.dataset_def is null) or (private.dataset_key is null)</Condition>
         <Name>Create-Request</Name>
     </Step>
     <Step>
+        <!-- Add Ubiq Auth to Request -->
         <Condition>(private.dataset_def is null) or (private.dataset_key is null)</Condition>
         <Name>Ubiq-Auth</Name>
     </Step>
     <Step>
+        <!-- Make request to Ubiq API -->
         <Condition>(private.dataset_def is null) or (private.dataset_key is null)</Condition>
         <Name>Get-Dataset-Keys-and-Def</Name>
     </Step>
     <Step>
-        <Name>Handle-Variables</Name>
+        <Condition>(responseDatasetKey IsNot null)</Condition>
+        <Name>Handle-Response</Name>
+    </Step>
+    <!-- Decrypt the data key -->
+    <Step>
+        <!-- Only decrypt if we need to -->
+        <Condition>(data_key_ready is false)</Condition>
+        <Name>Ubiq-Decrypt</Name>
     </Step>
     <Step>
-        <Condition>(private.dataset_def IsNot null) and (responseDatasetKey IsNot null)</Condition>
+        <Name>Handle-Variables</Name>
+    </Step>
+    <!-- Only write to KVM if we've retrieved new data -->
+    <Step>
+        <Condition>(private.dataset_def IsNot null) and ((responseDatasetKey IsNot null) or (data_key_ready is false))</Condition>
         <Name>Add-Definition-to-KVM</Name>
     </Step>
     <Step>
-        <Condition>(private.dataset_key IsNot null) and (responseDatasetKey IsNot null)</Condition>
+        <Condition>(private.dataset_key IsNot null) and ((responseDatasetKey IsNot null) or (data_key_ready is false))</Condition>
         <Name>Add-Key-to-KVM</Name>
     </Step>
 </SharedFlow>
