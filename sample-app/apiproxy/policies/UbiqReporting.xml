@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector async="false" continueOnError="false" enabled="true" name="UbiqReporting">
+    <DisplayName>Ubiq Reporting</DisplayName>
+    <Properties/>
+    <Statistics>
+        <Statistic name="ubiq_usage" ref="private.usage" type="STRING">{}</Statistic>
+        <Statistic name="ubiq_usage_record_count" ref="ubiq_usage_record_count" type="integer">1</Statistic>
+    </Statistics>
+</StatisticsCollector>

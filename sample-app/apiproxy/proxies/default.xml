@@ -25,6 +25,9 @@
                 <Condition>(request.header.Ubiq-Auth is null)</Condition>
                 <Name>ubiq-poc</Name>
             </Step>
+            <Step>
+                <Name>UbiqReporting</Name>
+            </Step>
         </Response>
     </PreFlow>
     <PostFlow name="PostFlow">

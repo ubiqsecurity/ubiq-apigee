@@ -1,8 +1,8 @@
-# BETA - Apigee Sample Application - BETA
+# Apigee Sample Application
 
 ## Java Callout
 
-This is the piece that responds to the Apigee workflow and calls the Ubiq libaries to encrypt the data.  This repo contains all the files necessary to run the sample application with the exception of editing the <b>setenv.sh</b> file referenced below.
+This is the piece that responds to the Apigee workflow and calls the Ubiq libraries to encrypt the data.  This repo contains all the files necessary to run the sample application with the exception of editing the <b>setenv.sh</b> file referenced below.
 
 ## Requirement
 
@@ -41,8 +41,23 @@ The example below shows that the json path containing the field birthDate should
    { "dataset" : "SSN", "json_path" : "$..ssn"}
 ]
 ```
-
 The Dataset mapping is read and processed into a hashmap containing the DATASET name as the key and the json_path as the value.
+
+## Usage Reporting
+The apiproxy/policies/ubiq-poc.xml contains setting to control the granular level of usage reporting.  All encrypt / decrypt operations for a dataset will be summed together within the granular level.  For example, When set to HOURS, a single count will be reported for all encrypt operations the same dataset operation within the same hour, XX:00:00 - XX:59:59.9999
+
+```
+        <Property name="usage_timestamp_reporting_granularity">HOURS</Property>
+```
+
+Valid values are shown below with NANOS being the default
+- DAYS
+- HALF_DAYS
+- HOURS
+- MINUTES
+- SECONDS
+- MILLIS
+- NANOS
 
 ## Encryption flow
 
