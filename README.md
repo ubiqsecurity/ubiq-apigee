@@ -1,4 +1,4 @@
-# [BETA] Ubiq Encryption in Apigee
+# Ubiq Encryption in Apigee
 The Ubiq Security Apigee library provides a convenient method of including the Ubiq Security Platform into your Apigee flows. Included are policies and code examples for setting up and performing encryption and decryption of data.
 
 ## Configuration

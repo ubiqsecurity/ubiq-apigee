@@ -6,6 +6,8 @@
    { "dataset" : "BIRTH_DATE", "json_path" : "$..birthDate"},
    { "dataset" : "SSN", "json_path" : "$..ssn"}
 ]</Property>
+        <!-- Valid inputs: NANOS, MILLIS, SECONDS, MINUTES, HOURS, HALF_DAYS, DAYS -->
+        <Property name="usage_timestamp_reporting_granularity">HOURS</Property>
      </Properties>
     <ResourceURL>java://edge-custom-policy-ubiq-poc.jar</ResourceURL>
     <DisplayName>Ubiq POC</DisplayName>

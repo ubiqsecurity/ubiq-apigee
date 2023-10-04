@@ -36,7 +36,7 @@ rm message-flow-1.0.0.jar
 mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-fpe-2.1.0.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity-fpe   -Dversion=2.1.0   -Dpackaging=jar   -DgeneratePom=true
 
 
-mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-2.1.0.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity   -Dversion=2.1.0   -Dpackaging=jar   -DgeneratePom=true 
+mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-2.1.2.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity   -Dversion=2.1.2   -Dpackaging=jar   -DgeneratePom=true 
 
 
 echo

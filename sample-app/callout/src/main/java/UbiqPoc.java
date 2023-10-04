@@ -33,6 +33,7 @@ import java.util.Iterator;
 import com.jayway.jsonpath.*;
 import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.internal.JsonFormatter;
+import java.time.temporal.ChronoUnit;
 
 import java.util.concurrent.*;
 
@@ -68,6 +69,42 @@ public class UbiqPoc implements Execution {
         return ret;
       }
 
+  ChronoUnit getUsageReportingGranularity() {
+    ChronoUnit ret = ChronoUnit.NANOS;
+    String usage_reporting_granularity = null;
+    try {
+      usage_reporting_granularity = getProperty("usage_timestamp_reporting_granularity");
+    } catch (Exception e) {
+      // Ignore exception if property is missing
+    }
+    if (usage_reporting_granularity != null) {
+      switch (usage_reporting_granularity.toUpperCase()) {
+        case "DAYS":
+          ret = ChronoUnit.DAYS;
+          break;
+        case "HALF_DAYS":
+          ret = ChronoUnit.HALF_DAYS;
+          break;
+        case "HOURS":
+          ret = ChronoUnit.HOURS;
+          break;
+        case "MINUTES":
+          ret = ChronoUnit.MINUTES;
+          break;
+        case "SECONDS":
+          ret = ChronoUnit.SECONDS;
+          break;
+        case "MILLIS":
+          ret = ChronoUnit.MILLIS;
+          break;
+        default:
+          ret = ChronoUnit.NANOS;
+          break;
+      }
+    }
+    return ret;
+  }
+
 	public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
   try {
 
@@ -84,6 +121,7 @@ public class UbiqPoc implements Execution {
     // SECRET_SIGNING_KEY = getVar(messageContext, "private.SECRET_SIGNING_KEY");
 
     String DatasetMappings = getProperty("DatasetsMappings");
+    ChronoUnit usageReportingGranularity = getUsageReportingGranularity();
 
     Object json_Datasets = new JSONParser().parse(DatasetMappings);
     JSONArray ja = (JSONArray)json_Datasets;
@@ -109,7 +147,7 @@ public class UbiqPoc implements Execution {
         }
 
     ubiqCredentials = UbiqFactory.createCredentials(ACCESS_KEY_ID, SECRET_SIGNING_KEY, SECRET_CRYPTO_ACCESS_KEY, SERVER);
-    UbiqConfiguration ubiqConfiguration = UbiqFactory.createConfiguration(5,5,5,true);
+    UbiqConfiguration ubiqConfiguration = UbiqFactory.createConfiguration(5,5,5,true, usageReportingGranularity);
 
     byte[] tweak = null;
 
@@ -134,6 +172,9 @@ public class UbiqPoc implements Execution {
           return e;
         });
       }
+      String usage = ubiqEncryptDecrypt.getCopyOfUsage();
+      messageContext.setVariable("usage", usage);
+      messageContext.setVariable("private.usage", usage);
 
       ret = JsonFormatter.prettyPrint(ctx.jsonString());
     }
