@@ -12,11 +12,11 @@ response = typeof response == "string" ? JSON.parse(response) : response;
 // Handle Fresh Response
 var full_dataset = response[dataset_name];
 
-// Set date retrieved if missing
 var now = Date.now();
 
 var dataset_def = Object.assign({}, full_dataset.ffs);
 dataset_def.retrieved = now;
+dataset_def.expires = now + expire_after_seconds;
 
 var dataset_key = {
     "encrypted_private_key": full_dataset.encrypted_private_key,
