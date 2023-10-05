@@ -2,7 +2,7 @@
 <KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Add-Key-to-KVM" mapIdentifier="Ubiq">
     <DisplayName>Add Key to KVM</DisplayName>
     <Properties/>
-    <Put override="false">
+    <Put override="true">
         <Key>
             <Parameter ref="key_variable"/>
         </Key>

@@ -2,7 +2,7 @@
 <KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Add-Definition-to-KVM" mapIdentifier="Ubiq">
     <DisplayName>Add Definition to KVM</DisplayName>
     <Properties/>
-    <Put override="false">
+    <Put override="true">
         <Key>
             <Parameter ref="def_variable"/>
         </Key>
