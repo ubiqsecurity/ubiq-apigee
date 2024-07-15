@@ -5,6 +5,7 @@ import time
 import email.utils
 import urllib
 
+VERSION = "2.2.0"
 
 class Http_Auth:
     """HTTP Authentication for the Ubiq Platform
@@ -31,7 +32,7 @@ class Http_Auth:
 
         rheaders = {}
 
-        rheaders['user-agent'] = 'ubiq-apigee/1.0.0'
+        rheaders['user-agent'] = 'ubiq-apigee/' + VERSION
 
         # the '(request-target)' is part of the signed data.
         # it's value is 'http_method path?query'

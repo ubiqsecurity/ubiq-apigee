@@ -33,10 +33,10 @@ curl -O https://raw.githubusercontent.com/apigee/api-platform-samples/master/doc
 
 rm message-flow-1.0.0.jar 
 
-mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-fpe-2.1.0.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity-fpe   -Dversion=2.1.0   -Dpackaging=jar   -DgeneratePom=true
+mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-fpe-2.1.1.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity-fpe   -Dversion=2.1.1   -Dpackaging=jar   -DgeneratePom=true
 
 
-mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-2.1.2.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity   -Dversion=2.1.2   -Dpackaging=jar   -DgeneratePom=true 
+mvn install:install-file   -Dfile=./apiproxy/resources/java/ubiqsecurity-2.2.0.jar   -DgroupId=com.ubiqsecurity   -DartifactId=ubiqsecurity   -Dversion=2.2.0   -Dpackaging=jar   -DgeneratePom=true 
 
 
 echo
