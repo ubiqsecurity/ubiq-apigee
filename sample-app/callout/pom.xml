@@ -65,13 +65,8 @@ do it manually by running these commands:
     </dependency> -->
     <dependency>
       <groupId>com.ubiqsecurity</groupId>
-      <artifactId>ubiqsecurity-fpe</artifactId>
-      <version>2.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.ubiqsecurity</groupId>
       <artifactId>ubiqsecurity</artifactId>
-      <version>2.2.0</version>
+      <version>2.2.3</version>
     </dependency>
     <dependency>
       <groupId>org.bouncycastle</groupId>

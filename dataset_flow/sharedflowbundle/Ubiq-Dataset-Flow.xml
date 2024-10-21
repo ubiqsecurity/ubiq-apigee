@@ -26,8 +26,7 @@
         <Resource>java://edge-custom-policy-ubiq-poc.jar</Resource>
         <Resource>java://json-path-2.8.0.jar</Resource>
         <Resource>java://json-smart-2.4.10.jar</Resource>
-        <Resource>java://ubiqsecurity-2.2.0.jar</Resource>
-        <Resource>java://ubiqsecurity-fpe-2.1.1.jar</Resource>
+        <Resource>java://ubiqsecurity-2.2.3.jar</Resource>
         <Resource>py://Ubiq-Auth.py</Resource>
         <Resource>jsc://Definition-Management.js</Resource>
         <Resource>jsc://Handle-Response.js</Resource>

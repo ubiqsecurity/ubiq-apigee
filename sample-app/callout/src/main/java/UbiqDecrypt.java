@@ -16,11 +16,9 @@ import org.json.simple.parser.*;
 
 import com.ubiqsecurity.UbiqCredentials;
 import com.ubiqsecurity.UbiqConfiguration;
-import com.ubiqsecurity.UbiqFPEEncryptDecrypt;
+import com.ubiqsecurity.UbiqStructuredEncryptDecrypt;
 import com.ubiqsecurity.UbiqFactory;
 import org.bouncycastle.crypto.InvalidCipherTextException;
-
-import ubiqsecurity.fpe.*;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -43,22 +41,6 @@ import com.google.gson.*;
 
 public class UbiqDecrypt implements Execution {
 
-  // private Map <String,String> properties; // read-only
-
-  // public UbiqDecrypt(Map <String,String> properties) {
-  //         this.properties = properties;
-  // }
-
-  // public String getProperty(String propName) throws IllegalArgumentException {
-  //   String ret = null;
-  //   Object obj = this.properties.get(propName);
-  //   if (obj != null && obj instanceof String) {
-  //     ret = (String)obj;
-  //   }
-  //   return ret;
-  // }
-
-
   public String getVar(MessageContext messageContext, String varName) throws IllegalArgumentException {
       String ret = null;
       Object obj = messageContext.getVariable(varName);
@@ -74,9 +56,6 @@ public class UbiqDecrypt implements Execution {
 
 	public ExecutionResult execute(MessageContext messageContext, ExecutionContext executionContext) {
 		
-// messageContext.setVariable("definition_key", "HELLO WORLD");
-// return ecutionResult.SUCCESS;
-
   try {
 
     UbiqCredentials ubiqCredentials;
@@ -101,7 +80,7 @@ public class UbiqDecrypt implements Execution {
 
       UbiqConfiguration ubiqConfiguration = UbiqFactory.createConfiguration(5,5,5,true);
 
-      try (UbiqFPEEncryptDecrypt ubiqEncryptDecrypt = new UbiqFPEEncryptDecrypt(ubiqCredentials, ubiqConfiguration)) {
+      try (UbiqStructuredEncryptDecrypt ubiqEncryptDecrypt = new UbiqStructuredEncryptDecrypt(ubiqCredentials, ubiqConfiguration)) {
 
           String decrypted_data_key = ubiqEncryptDecrypt.decryptKey(key);
 
@@ -111,8 +90,7 @@ public class UbiqDecrypt implements Execution {
           if (save_decrypted_data_key != null && save_decrypted_data_key.equalsIgnoreCase("true")) {
             key_data.addProperty("decrypted_data_key", decrypted_data_key);
           } else if (save_encrypted_data_key != null && save_encrypted_data_key.equalsIgnoreCase("true")) {
-            // MUST BE ENCRYPTED DAT A KEY - TODO
-            // key_data.addProperty("encrypted_data_key", decrypted_data_key);
+            // MUST BE ENCRYPTED DATA KEY
             key_data.add("encrypted_data_key", ubiqEncryptDecrypt.encryptData(decrypted_data_key.getBytes(), SECRET_CRYPTO_ACCESS_KEY));
           }
 

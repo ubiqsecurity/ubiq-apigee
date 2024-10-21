@@ -16,11 +16,9 @@ import org.json.simple.parser.*;
 
 import com.ubiqsecurity.UbiqCredentials;
 import com.ubiqsecurity.UbiqConfiguration;
-import com.ubiqsecurity.UbiqFPEEncryptDecrypt;
+import com.ubiqsecurity.UbiqStructuredEncryptDecrypt;
 import com.ubiqsecurity.UbiqFactory;
 import org.bouncycastle.crypto.InvalidCipherTextException;
-
-import ubiqsecurity.fpe.*;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -152,7 +150,7 @@ public class UbiqPoc implements Execution {
     byte[] tweak = null;
 
     String ret = "";
-    try (UbiqFPEEncryptDecrypt ubiqEncryptDecrypt = new UbiqFPEEncryptDecrypt(ubiqCredentials, ubiqConfiguration)) {
+    try (UbiqStructuredEncryptDecrypt ubiqEncryptDecrypt = new UbiqStructuredEncryptDecrypt(ubiqCredentials, ubiqConfiguration)) {
 
       String json = getVar(messageContext,"response_json");
 
@@ -168,7 +166,7 @@ public class UbiqPoc implements Execution {
         ubiqEncryptDecrypt.loadKeyDef(name, key, true);
 
         ctx.map(entry.getValue(), (currentValue, configuration) -> {
-          String e = ubiqEncryptDecrypt.encryptFPE(name, (String)currentValue, tweak);
+          String e = ubiqEncryptDecrypt.encrypt(name, (String)currentValue, tweak);
           return e;
         });
       }
