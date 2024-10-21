@@ -85,7 +85,7 @@ The <B>default.xml</B> contains the processing steps.  In this case, the setup o
 
 This directory contains the JAR files that are deployed to Apigee.  The necessary Ubiq libraries are already included in this directory as well as other libraries required by the sample application.  Some dependencies are automatically supplied by the Apigee environment and are not included in this directory to prevent conflicts.  Apigee has a limitation to the size of the resources/java directory.  See the [Apigee](https://docs.apigee.com/) documentation for additional information.
 
-# Compiling
+## Compiling
 
 Requires a Java 1.8 environment.
 
@@ -110,3 +110,16 @@ $ ./deploy.sh
 
 $ ./invoke.sh
 ```
+
+## Ubiq API Error Reference
+
+Occasionally, you may encounter issues when interacting with the Ubiq API. 
+
+| Status Code | Meaning | Solution |
+|---|---|---|
+| 400 | Bad Request | Check name of datasets and credentials are complete. |
+| 401 | Authentication issue | Check you have the correct API keys, and it has access to the datasets you are using.  Check dataset name. |
+| 426 | Upgrade Required | You are using an out of date version of the library, or are trying to use newer features not supported by the library you are using.  Update the library and try again.
+| 429 | Rate Limited | You are performing operations too quickly. Either slow down, or contact support@ubiqsecurity.com to increase your limits. | 
+| 500 | Internal Server Error | Something went wrong. Contact support if this persists.  | 
+| 504 | Internal Error | Possible API key issue.  Check credentials or contact support.  | 

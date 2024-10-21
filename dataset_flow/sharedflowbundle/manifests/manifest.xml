@@ -19,8 +19,7 @@
         <VersionInfo resourceName="java://edge-custom-policy-ubiq-poc.jar" version="SHA-512:0b82b31b4d5352c843bfaa03213d1f6a477893b05e452fcd6d489318cb6a6036d618dfdafaa7016d52cd115565fa4fb3e276b4dbf6c1405858a8eeca2a587fac"/>
         <VersionInfo resourceName="java://json-path-2.8.0.jar" version="SHA-512:8d1521092a2acb13a2667774b8b81debc1f2a0e937007e27e5bd28bb222910774b64d6e269f33473f765c810c03a34e715d16065dc9a4be8d8d081436282ba7e"/>
         <VersionInfo resourceName="java://json-smart-2.4.10.jar" version="SHA-512:de94fc5a379151bf659dfc93376c16b9c200870b7097f6eabcc8c40af41e47f30048b6c8e28f07ce073123841b979e050379e291e1af782377bf4d3d1fb73494"/>
-        <VersionInfo resourceName="java://ubiqsecurity-2.1.0.jar" version="SHA-512:bbccf7db6cee78812d81c3dfce153a7559827cfcb06014230c796877b198be8404849d74bc0e37963d62b13435033e076766fa0754d0d196f47bec9624734009"/>
-        <VersionInfo resourceName="java://ubiqsecurity-fpe-2.1.0.jar" version="SHA-512:bbc06a5f0a76837f101dccd16a10fed3db1100185d48a855c789e0e0609de617a33b12ebe1efe8c826e9869fd224b780f4401f971a46d746e0022a496882db6f"/>
+        <VersionInfo resourceName="java://ubiqsecurity-2.2.3.jar" version="SHA-512:bbccf7db6cee78812d81c3dfce153a7559827cfcb06014230c796877b198be8404849d74bc0e37963d62b13435033e076766fa0754d0d196f47bec9624734009"/>
         <VersionInfo resourceName="jsc://Definition-Management.js" version="SHA-512:7fbf1073da9021a14db612074bd297423d62a04b786722c26bc5ff4d9d0246df3715b370da63b0830307db0ced37a40b0702effe1fa50663c117a539670ecc7c"/>
         <VersionInfo resourceName="jsc://Handle-Response.js" version="SHA-512:2936d06bab7d3f95c3fccca7386fcec87276183c4274339b78bb98d00c1f9d8483b068a18cc1423eaa0fff93eb527af20570c59c535cb1a678569803a6da73b2"/>
         <VersionInfo resourceName="jsc://Handle-Variables.js" version="SHA-512:34d1b532ba4a925669ddbebd17de4d32f77e37c6f7eee2d2bb6f1addc30cd7bb00df3e2db53c5ce6f6fe0d990f01543692bbfbfc14c87c4e4115784948aa2a6d"/>
