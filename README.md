@@ -7,10 +7,10 @@ Create a Key Value Map within your Apigee environment with the name `Ubiq`. For 
 > Note: When accessing keys in an encrypted KVM, you must prefix your variable names with `private.` (eg. `private.ACCESS_KEY_ID`) or it will throw an error at runtime. For more information, view Apigee's Documentation on [Key Value Map Operations](https://docs.apigee.com/api-platform/reference/policies/key-value-map-operations-policy#getelement-attributes)
 
 ## Usage
-For each Dataset you wish to use, you will need to add the Dataset Flow and configure it appropriately. See [dataset_flow/README.md](dataset_flow/README.md) for more information.
+For each Dataset you wish to use, you will need to add the Dataset Flow and configure it appropriately. See [dataset_flow/README.md](https://gitlab.com/ubiqsecurity/ubiq-apigee/-/blob/main/dataset_flow/README.md) for more information.
 
 ### Java Callout
 
-The <B>sample-app</B> directory contains a sample callout application written in Java using the Ubiq libraries along with the files necessary to use the dataflow above to setup the necessary data within Apigee. See [sample-app/README.md](sample-app/README.md) for more information.
+The <B>sample-app</B> directory contains a sample callout application written in Java using the Ubiq libraries along with the files necessary to use the dataflow above to setup the necessary data within Apigee. See [sample-app/README.md](https://gitlab.com/ubiqsecurity/ubiq-apigee/-/blob/main/sample-app/README.md) for more information.
 
 
